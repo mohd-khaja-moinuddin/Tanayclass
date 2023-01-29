@@ -1,0 +1,35 @@
+var score=0
+var readlineSync = require("readline-sync");
+var quest = readlineSync.question("name?");
+console.log("hi " + quest);
+
+function detail(question,ans)
+  {
+  var cur = readlineSync.question(question);
+
+  if (cur === ans) {
+    console.log("right");
+    score=score+1;
+  }
+  else {
+    console.log("wrong");
+  }
+    console.log(score);
+    console.log("--------")
+}
+
+var details = [
+  {
+    question: "Age?",
+    ans: "24"
+  },
+  {
+    question: "place?",
+    ans: "hnk"
+  }
+];
+
+for (var i = 0; i < details.length; i++) {
+  var currentdetail = details[i];
+  detail(currentdetail.question, currentdetail.ans);
+}
